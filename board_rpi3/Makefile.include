@@ -1,0 +1,22 @@
+
+IMG=$(OUT_DIR)kernel8.img
+
+#===================================================================
+# Target specific info
+ARCH=arch_armv8
+CPU=cpu_cortex-a53
+SOC=bcm283x
+
+#===================================================================
+# Compiler info
+COMPILER=aarch64-linux-gnu-
+CC=$(COMPILER)gcc
+CPY=$(COMPILER)objcopy
+DMP=$(COMPILER)objdump
+
+#===================================================================
+
+# CPU flags
+CPU_FLAGS= -march=armv8-a+crc -mtune=cortex-a53 -ftree-vectorize -funsafe-math-optimizations
+
+
