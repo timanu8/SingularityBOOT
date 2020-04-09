@@ -29,10 +29,10 @@
 #ifndef __BOARD_PERIPHMAP_H__
 #define __BOARD_PERIPHMAP_H__
 
-#define BCM2837_TOTAL_CORES                 4
+#define BCM2711_TOTAL_CORES                 4
 
 /* SOC devices address */
-#define SOC_PERIPH_BASE_ADDR                 0x3F000000
+#define SOC_PERIPH_BASE_ADDR                 0xFE000000
 
 #define SOC_SYS_TIMER_ADDR                  ((T_ADDRESS)(SOC_PERIPH_BASE_ADDR + 0x00003000))
 #define SOC_DMA_ADDR                        ((T_ADDRESS)(SOC_PERIPH_BASE_ADDR + 0x00007000))

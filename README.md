@@ -9,6 +9,7 @@ SingularityBOOT also uses the RPI UART PL011, because this UART have a dedicated
 At the moment it supports the following boards:
 	
 	- RPI3
+	- RPI4
 
 For detailed information how to use SingularityBOOT read the README file in the respective board folder.
 

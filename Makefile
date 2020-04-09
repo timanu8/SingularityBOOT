@@ -1,12 +1,13 @@
-OUT_DIR=out/
+OUT_DIR=out
 
-ELF=$(OUT_DIR)singularityBOOT.elf
-HEX=$(OUT_DIR)singularityBOOT.hex
-DIS=$(OUT_DIR)singularityBOOT.dasm
+ELF=$(OUT_DIR)/singularityBOOT.elf
+HEX=$(OUT_DIR)/singularityBOOT.hex
+DIS=$(OUT_DIR)/singularityBOOT.dasm
 
 #===================================================================
 # Target specific info
-BOARD=board_rpi3
+#BOARD=board_rpi3
+BOARD=board_rpi4
 
 #===================================================================
 # Include Board info to findout the remain information
@@ -47,7 +48,7 @@ OBJS=$(ASMOBJS) $(COBJS)
 HEADERS= -I$(SOC) -I$(BOARD) -Icore -Icore/debug
 
 # Compiler flags
-CC_FLAGS= -Wall -Werror -O1 -nostdlib -nostartfiles -ffreestanding -nostdinc -Wno-int-to-pointer-cast -Wno-pointer-sign -Wno-pointer-to-int-cast -Wno-implicit-function-declaration $(CPU_FLAGS) $(HEADERS)
+CC_FLAGS= -Wall -Werror -O3 -nostdlib -nostartfiles -ffreestanding -nostdinc -Wno-int-to-pointer-cast -Wno-pointer-sign -Wno-pointer-to-int-cast -Wno-implicit-function-declaration $(CPU_FLAGS) $(HEADERS)
 
 # Linker flags
 LD_FLAGS= -T $(BOARD)/linker.ld -Wl,--build-id=none -N
@@ -83,7 +84,7 @@ $(DIS):
 	$(DMP) -D $(ELF) > $(DIS)
 
 directory:
-	mkdir -p $(OUT_DIR) 
+	mkdir -p $(OUT_DIR)
 
 .PHONY: clean
 clean:

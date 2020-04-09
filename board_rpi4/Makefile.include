@@ -4,7 +4,7 @@ IMG=$(OUT_DIR)/kernel8.img
 #===================================================================
 # Target specific info
 ARCH=arch_armv8
-CPU=cpu_cortex-a53
+CPU=cpu_cortex-a72
 SOC=bcm283x
 
 #===================================================================
@@ -17,6 +17,6 @@ DMP=$(COMPILER)objdump
 #===================================================================
 
 # CPU flags
-CPU_FLAGS= -march=armv8-a+crc -mtune=cortex-a53 -ftree-vectorize -funsafe-math-optimizations
+CPU_FLAGS= -march=armv8-a+crc -mtune=cortex-a72 -ftree-vectorize -funsafe-math-optimizations
 
 

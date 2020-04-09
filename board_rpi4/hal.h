@@ -21,15 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- * @brief - Processor properties definition header.
- * @date  - 27-02-2020
+ * @brief   - HW abstraction functions.
+ * @author  - tvasconcelos
+ * @date    - 2020-03-05
+ * @update  -
  *
  */
 
-#ifndef __CPU_PROPERTIES_H__
-#define __CPU_PROPERTIES_H__
+#ifndef __HAL_H__
+#define __HAL_H__
 
-typedef unsigned long long int  T_CPU_REGISTER_WIDTH;
+#include "types.h"
 
-#endif /* __CPU_PROPERTIES_H__ */
+T_CHAR hal_get_char();
+
+T_VOID hal_put_char(T_CHAR c);
+
+T_VOID jump_to_entry_core_0(T_UINT32);
+
+#endif /* __HAL_H__ */

@@ -21,15 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- *
- * @brief - Processor properties definition header.
- * @date  - 27-02-2020
+ * @brief   - HW abstraction functions.
+ * @author  - tvasconcelos
+ * @date    - 2020-03-05
+ * @update  -
  *
  */
 
-#ifndef __CPU_PROPERTIES_H__
-#define __CPU_PROPERTIES_H__
+#include "types.h"
+#include "hal.h"
+#include "board_periphmap.h"
+#include "bcm283x_uart.h"
 
-typedef unsigned long long int  T_CPU_REGISTER_WIDTH;
 
-#endif /* __CPU_PROPERTIES_H__ */
+T_CHAR hal_get_char()
+{
+    return bcm283x_uart_recv_char(SOC_UART_ADDR);
+}
+
+T_VOID hal_put_char(T_CHAR c)
+{
+    bcm283x_uart_send_char(SOC_UART_ADDR, c);
+}
+
