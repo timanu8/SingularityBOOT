@@ -9,7 +9,7 @@ SOC=bcm283x
 
 #===================================================================
 # Compiler info
-COMPILER=aarch64-linux-gnu-
+COMPILER=aarch64-none-elf-
 CC=$(COMPILER)gcc
 CPY=$(COMPILER)objcopy
 DMP=$(COMPILER)objdump
